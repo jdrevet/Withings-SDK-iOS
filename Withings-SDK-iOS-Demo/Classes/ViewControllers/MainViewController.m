@@ -79,7 +79,7 @@
         NSLog(@"%@", error);
         [_loginActivityIndicatorView stopAnimating];
         _loginButton.userInteractionEnabled = YES;
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[error description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
     }];
 }
