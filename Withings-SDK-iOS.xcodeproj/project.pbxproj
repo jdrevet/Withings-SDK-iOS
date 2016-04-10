@@ -901,7 +901,7 @@
 				INFOPLIST_FILE = "Withings-SDK-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = test;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.jdrevet.Withings-SDK-iOS";
 				PRODUCT_NAME = Withings_SDK_iOS;
 				SKIP_INSTALL = YES;
 			};
@@ -919,7 +919,7 @@
 				INFOPLIST_FILE = "Withings-SDK-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = test;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.jdrevet.Withings-SDK-iOS";
 				PRODUCT_NAME = Withings_SDK_iOS;
 				SKIP_INSTALL = YES;
 			};

@@ -119,6 +119,7 @@
     if(indexPath.row < _menuItems.count) {
         [self performSegueWithIdentifier:_menuItems[indexPath.row].segueId sender:self];
     }
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 @end
