@@ -67,7 +67,7 @@
  * @param presenterViewController The view controller which will present the authorization view.
  * @param success A block object to be executed when the user has granted access
  * 
- * - *userId* The user id corresponding . Your application should persist this id to be able to request Withings API without requesting again the user authorization
+ * - *userId* The id of the user who has given his authorization. Your application should persist this id to be able to request Withings API without requesting again the user authorization
  * @param failure A block object to be executed when an error occured during the authorization process
  *
  * - *error* The encountered error
