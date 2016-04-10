@@ -44,7 +44,6 @@
 		BF6555CC1C7CB23400D5FC9F /* WithingsBodyMeasuresGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6555C01C7CB23400D5FC9F /* WithingsBodyMeasuresGroup.m */; };
 		BF667CB31C71D46C00BEFB57 /* WithingsAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = BF667CB11C71D46C00BEFB57 /* WithingsAPI.h */; };
 		BF667CB41C71D46C00BEFB57 /* WithingsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BF667CB21C71D46C00BEFB57 /* WithingsAPI.m */; };
-		BFC06C4E1C72226400FE4DEB /* Withings_SDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3AF0761C6F672100A75F52 /* Withings_SDK_iOS.framework */; };
 		BFC06C611C723E6F00FE4DEB /* WithingsMeasureAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = BFC06C5F1C723E6F00FE4DEB /* WithingsMeasureAPIClient.h */; };
 		BFC06C621C723E6F00FE4DEB /* WithingsMeasureAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC06C601C723E6F00FE4DEB /* WithingsMeasureAPIClient.m */; };
 		BFD6AADA1CBA83C6004C1113 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD6AAC11CBA83C6004C1113 /* AppDelegate.m */; };
@@ -58,6 +57,8 @@
 		BFD6AAE21CBA83C6004C1113 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD6AAD31CBA83C6004C1113 /* Assets.xcassets */; };
 		BFD6AAE31CBA83C6004C1113 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD6AAD41CBA83C6004C1113 /* LaunchScreen.storyboard */; };
 		BFD6AAE41CBA83C6004C1113 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD6AAD61CBA83C6004C1113 /* Main.storyboard */; };
+		BFE202D51CBABF7600CCEB9F /* Withings_SDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3AF0761C6F672100A75F52 /* Withings_SDK_iOS.framework */; };
+		BFE202D61CBABF7600CCEB9F /* Withings_SDK_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF3AF0761C6F672100A75F52 /* Withings_SDK_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDD153EF218473F5E3EC5C66 /* Pods_Withings_SDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D377E13BF01C1C0CC30A234 /* Pods_Withings_SDK_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +91,28 @@
 			remoteGlobalIDString = BF3AF0751C6F672100A75F52;
 			remoteInfo = "Withings-SDK-iOS";
 		};
+		BFE202D71CBABF7600CCEB9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF3AF06D1C6F672100A75F52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF3AF0751C6F672100A75F52;
+			remoteInfo = "Withings-SDK-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BFE202D91CBABF7600CCEB9F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BFE202D61CBABF7600CCEB9F /* Withings_SDK_iOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D377E13BF01C1C0CC30A234 /* Pods_Withings_SDK_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Withings_SDK_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,7 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFC06C4E1C72226400FE4DEB /* Withings_SDK_iOS.framework in Frameworks */,
+				BFE202D51CBABF7600CCEB9F /* Withings_SDK_iOS.framework in Frameworks */,
 				3E64277ED36AECA033BE4E2A /* Pods_Withings_SDK_iOS_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,10 +461,12 @@
 				BF3AF0D11C6F74A200A75F52 /* Resources */,
 				EF4715A405403974E00B5E3E /* Embed Pods Frameworks */,
 				66D76CF1C47FD47FB7D836F8 /* Copy Pods Resources */,
+				BFE202D91CBABF7600CCEB9F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BFE202D81CBABF7600CCEB9F /* PBXTargetDependency */,
 			);
 			name = "Withings-SDK-iOS-Demo";
 			productName = "Withings-SDK-iOS-Demo";
@@ -750,6 +774,11 @@
 			target = BF3AF0751C6F672100A75F52 /* Withings-SDK-iOS */;
 			targetProxy = BF6555D21C7DB5A000D5FC9F /* PBXContainerItemProxy */;
 		};
+		BFE202D81CBABF7600CCEB9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF3AF0751C6F672100A75F52 /* Withings-SDK-iOS */;
+			targetProxy = BFE202D71CBABF7600CCEB9F /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -872,7 +901,7 @@
 				INFOPLIST_FILE = "Withings-SDK-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = test;
 				PRODUCT_NAME = Withings_SDK_iOS;
 				SKIP_INSTALL = YES;
 			};
@@ -890,7 +919,7 @@
 				INFOPLIST_FILE = "Withings-SDK-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = test;
 				PRODUCT_NAME = Withings_SDK_iOS;
 				SKIP_INSTALL = YES;
 			};
