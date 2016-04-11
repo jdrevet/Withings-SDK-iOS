@@ -41,7 +41,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"WithingsBodyMeasure description:%@\rvalue: %f\rtype: %li\r", [super description], self.value, self.type];
+    return [NSString stringWithFormat:@"WithingsBodyMeasure description:%@\rvalue: %f\rtype: %li\r", [super description], self.value, (long)self.type];
 }
 
 @end

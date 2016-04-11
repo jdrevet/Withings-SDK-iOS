@@ -48,7 +48,7 @@ NSString * const WITHINGS_DOMAIN_ERROR = @"withings.error";
 + (instancetype)serverErrorWithCode:(WithingsServerErrorCode)serverErrorCode message:(NSString*)serverErrorMessage
 {
     NSDictionary *errorUserInfo = @{NSLocalizedDescriptionKey : @"Server Error",
-                                    NSLocalizedFailureReasonErrorKey : [NSString stringWithFormat:@"Server returns error: %li - %@", serverErrorCode, serverErrorMessage]};
+                                    NSLocalizedFailureReasonErrorKey : [NSString stringWithFormat:@"Server returns error: %li - %@", (long)serverErrorCode, serverErrorMessage]};
     WithingsError *error = [WithingsError errorWithCode:WithingsErrorServer userInfo:errorUserInfo];
     error.serverErrorCode = serverErrorCode;
     error.serverErrorMessage = serverErrorMessage;

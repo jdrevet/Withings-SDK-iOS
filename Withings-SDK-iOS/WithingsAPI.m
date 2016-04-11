@@ -129,7 +129,7 @@ static NSString * const KEY_CHAIN_SERVICE_ID = @"withings.keychain.users";
 
 - (BOOL)hasAccessAuthorizationForUser:(NSString*)userId
 {
-    return [SSKeychain passwordDataForService:KEY_CHAIN_SERVICE_ID account:userId];
+    return ([SSKeychain passwordDataForService:KEY_CHAIN_SERVICE_ID account:userId] != nil);
 }
 
 - (WithingsMeasureAPIClient*)measureAPIClient

@@ -29,7 +29,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"WithingsBodyMeasuresGroup description:%@\r groupId: %@\rsource: %li\rdate: %@\rcategory: %li\rcomment: %@\rmeasures: %@\r",[super description], self.groupId, self.source, self.date, self.category, self.comment, self.measures];
+    return [NSString stringWithFormat:@"WithingsBodyMeasuresGroup description:%@\r groupId: %@\rsource: %li\rdate: %@\rcategory: %li\rcomment: %@\rmeasures: %@\r",[super description], self.groupId, (long)self.source, self.date, (long)self.category, self.comment, self.measures];
 }
 
 @end

@@ -88,7 +88,7 @@
     NSDate *startDate = [_dateFormatter dateFromString:_startDateTextField.text];
     NSDate *endDate = [_dateFormatter dateFromString:_endDateTextField.text];
     [[WithingsAPI sharedInstance].measureAPIClient getActivitiesMeasuresForUser:[[NSUserDefaults standardUserDefaults] stringForKey:@"WithingsUser"] inDateRange:[MeasuresDateRange dateRangeBetweenStartDate:startDate andEndDate:endDate] success:^(NSArray<WithingsActivity *> *activitiesMeasures) {
-        NSLog(@"%li activities found", activitiesMeasures.count);
+        NSLog(@"%li activities found", (unsigned long)activitiesMeasures.count);
         //Hide activity indicator
         _fetchButton.userInteractionEnabled = YES;
         [_activityIndicator stopAnimating];
@@ -140,7 +140,7 @@
     if(indexPath.row < _activitiesMeasures.count) {
         WithingsActivity *activity = _activitiesMeasures[indexPath.row];
         cell.dateLabel.text = [_dateFormatter stringFromDate:activity.date];
-        cell.stepsLabel.text = [NSString stringWithFormat:@"%li", activity.steps];
+        cell.stepsLabel.text = [NSString stringWithFormat:@"%li", (long)activity.steps];
         cell.distanceLabel.text = [NSString stringWithFormat:@"%li", (long)activity.distance];
         cell.caloriesLabel.text = [NSString stringWithFormat:@"%li", (long)activity.calories];
         cell.totalCaloriesLabel.text = [NSString stringWithFormat:@"%li", (long)activity.totalCalories];
