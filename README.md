@@ -1,3 +1,5 @@
+# Withings-SDK-iOS
+
 ## Overview
 
 Withings-SDK-iOS provides an Objective-C interface for integrating iOS apps with the [Withings API](http://oauth.withings.com/api). It handles OAuth 1.0 authentication using [OAuthSwift library](https://github.com/OAuthSwift/OAuthSwift).
@@ -35,7 +37,20 @@ Several third-party open source libraries are used within Withings-SDK-iOS:
 
 ### Installation with CocoaPods
 
-TODO
+To integrate Withings-SDK-iOS into your project using [CocoaPods](https://cocoapods.org/), add the following lines in your `Podfile`:
+
+```ruby
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'Withings-SDK-iOS'
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
 
 ### Installation with Carthage
 
@@ -47,7 +62,9 @@ TODO
 ### SDK setup
 
 Before any other call, set up the shared `WithingsAPI` object with your application keys. For example, you can set up the SDK in the method `application:didFinishLaunchingWithOptions:` in your AppDelegate.
-```
+```obj-c
+// AppDelegate.m
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSString *consumerKey = @"<Your consumer key>";
@@ -66,7 +83,9 @@ During the OAuth 1.0 authentication process, the user will be redirect to a web 
 ![Image](Assets/URL_Scheme.png "Image")
 
 2. In your AppDelegate, implement `application:openURL:` and call `handleOpenURL:` on the shared `WithingsAPI` object.
-```
+```obj-c
+// AppDelegate.m
+
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
 {
     [[WithingsAPI sharedInstance] handleOpenURL:url];
@@ -74,7 +93,9 @@ During the OAuth 1.0 authentication process, the user will be redirect to a web 
 }
 ```
 Do not forget the deprecated method to manage the callbacks on iOS 8.0.
-```
+```obj-c
+// AppDelegate.m
+
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(id)annotation
 {
     [[WithingsAPI sharedInstance] handleOpenURL:url];
@@ -85,7 +106,9 @@ Do not forget the deprecated method to manage the callbacks on iOS 8.0.
 ### Request user authorization
 
 Request the user authorization by calling the following method. The user will be redirect to a web page provided by Withings to authorize your application to access to his resources.
-```
+```obj-c
+// SomeViewController.h
+
 [[WithingsAPI sharedInstance] requestAccessAuthorizationWithCallbackScheme:@"<Your application scheme>" presenterViewController:self success:^(NSString *userId) {
 	//Persist the user id to be able to request Withings API without requesting again the user authorization
 } failure:^(WithingsError *error) {
@@ -97,13 +120,19 @@ Request the user authorization by calling the following method. The user will be
 
 Once you have user authorization, you can call any API provided by the API client. You can manage one or more instance of clients or simply use the instance of client held by the `WithingsAPI` singleton.
 For example, to get all the activities measures for an user, call:
-```
+```obj-c
+// SomeViewController.h
+
 [[WithingsAPI sharedInstance].measureAPIClient getActivitiesMeasuresForUser:@"<The user id>" success:^(NSArray<WithingsActivity *> *activitiesMeasures) {
     //Process the results
 } failure:^(WithingsError *error) {
     //Manage the error
 }
 ```
+
+## Author
+
+Johan Drevet
 
 
 ## License
