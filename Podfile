@@ -19,12 +19,3 @@ target 'Withings-SDK-iOS-Demo' do
   platform :ios, '8.0'
   shared_pods
 end
-
-target 'Withings-SDK-iOS-DemoTests' do
-
-end
-
-target 'Withings-SDK-iOS-DemoUITests' do
-
-end
-

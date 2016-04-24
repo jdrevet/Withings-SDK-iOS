@@ -28,8 +28,6 @@
 		BF3AF07A1C6F672100A75F52 /* Withings_SDK_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = BF3AF0791C6F672100A75F52 /* Withings_SDK_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF3AF0811C6F672100A75F52 /* Withings_SDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3AF0761C6F672100A75F52 /* Withings_SDK_iOS.framework */; };
 		BF3AF0861C6F672100A75F52 /* Withings_SDK_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3AF0851C6F672100A75F52 /* Withings_SDK_iOSTests.m */; };
-		BF3AF0F01C6F74A200A75F52 /* Withings_SDK_iOS_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3AF0EF1C6F74A200A75F52 /* Withings_SDK_iOS_DemoTests.m */; };
-		BF3AF0FB1C6F74A200A75F52 /* Withings_SDK_iOS_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3AF0FA1C6F74A200A75F52 /* Withings_SDK_iOS_DemoUITests.m */; };
 		BF48CE251C7A0063006F4E7F /* WithingsError.h in Headers */ = {isa = PBXBuildFile; fileRef = BF48CE231C7A0063006F4E7F /* WithingsError.h */; };
 		BF48CE261C7A0063006F4E7F /* WithingsError.m in Sources */ = {isa = PBXBuildFile; fileRef = BF48CE241C7A0063006F4E7F /* WithingsError.m */; };
 		BF6555C11C7CB23400D5FC9F /* WithingsActivity+Mapping.h in Headers */ = {isa = PBXBuildFile; fileRef = BF6555B51C7CB23400D5FC9F /* WithingsActivity+Mapping.h */; };
@@ -69,20 +67,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = BF3AF0751C6F672100A75F52;
 			remoteInfo = "Withings-SDK-iOS";
-		};
-		BF3AF0EC1C6F74A200A75F52 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF3AF06D1C6F672100A75F52 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF3AF0D21C6F74A200A75F52;
-			remoteInfo = "Withings-SDK-iOS-Demo";
-		};
-		BF3AF0F71C6F74A200A75F52 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF3AF06D1C6F672100A75F52 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF3AF0D21C6F74A200A75F52;
-			remoteInfo = "Withings-SDK-iOS-Demo";
 		};
 		BF6555D21C7DB5A000D5FC9F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -130,12 +114,6 @@
 		BF3AF0851C6F672100A75F52 /* Withings_SDK_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Withings_SDK_iOSTests.m; sourceTree = "<group>"; };
 		BF3AF0871C6F672100A75F52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF3AF0D31C6F74A200A75F52 /* Withings-SDK-iOS-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Withings-SDK-iOS-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF3AF0EB1C6F74A200A75F52 /* Withings-SDK-iOS-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Withings-SDK-iOS-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF3AF0EF1C6F74A200A75F52 /* Withings_SDK_iOS_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Withings_SDK_iOS_DemoTests.m; sourceTree = "<group>"; };
-		BF3AF0F11C6F74A200A75F52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF3AF0F61C6F74A200A75F52 /* Withings-SDK-iOS-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Withings-SDK-iOS-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF3AF0FA1C6F74A200A75F52 /* Withings_SDK_iOS_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Withings_SDK_iOS_DemoUITests.m; sourceTree = "<group>"; };
-		BF3AF0FC1C6F74A200A75F52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF48CE231C7A0063006F4E7F /* WithingsError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithingsError.h; sourceTree = "<group>"; };
 		BF48CE241C7A0063006F4E7F /* WithingsError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithingsError.m; sourceTree = "<group>"; };
 		BF6555B51C7CB23400D5FC9F /* WithingsActivity+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WithingsActivity+Mapping.h"; sourceTree = "<group>"; };
@@ -199,20 +177,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF3AF0E81C6F74A200A75F52 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF3AF0F31C6F74A200A75F52 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -231,8 +195,6 @@
 				BF3AF0781C6F672100A75F52 /* Withings-SDK-iOS */,
 				BF3AF0841C6F672100A75F52 /* Withings-SDK-iOSTests */,
 				BF3AF0D41C6F74A200A75F52 /* Withings-SDK-iOS-Demo */,
-				BF3AF0EE1C6F74A200A75F52 /* Withings-SDK-iOS-DemoTests */,
-				BF3AF0F91C6F74A200A75F52 /* Withings-SDK-iOS-DemoUITests */,
 				BF3AF0771C6F672100A75F52 /* Products */,
 				C8828C1E8F09401E67DD5B26 /* Pods */,
 				6534FAD02542D881191763D5 /* Frameworks */,
@@ -245,8 +207,6 @@
 				BF3AF0761C6F672100A75F52 /* Withings_SDK_iOS.framework */,
 				BF3AF0801C6F672100A75F52 /* Withings-SDK-iOSTests.xctest */,
 				BF3AF0D31C6F74A200A75F52 /* Withings-SDK-iOS-Demo.app */,
-				BF3AF0EB1C6F74A200A75F52 /* Withings-SDK-iOS-DemoTests.xctest */,
-				BF3AF0F61C6F74A200A75F52 /* Withings-SDK-iOS-DemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -289,24 +249,6 @@
 				BFD6AAD21CBA83C6004C1113 /* Resources */,
 			);
 			path = "Withings-SDK-iOS-Demo";
-			sourceTree = "<group>";
-		};
-		BF3AF0EE1C6F74A200A75F52 /* Withings-SDK-iOS-DemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				BF3AF0EF1C6F74A200A75F52 /* Withings_SDK_iOS_DemoTests.m */,
-				BF3AF0F11C6F74A200A75F52 /* Info.plist */,
-			);
-			path = "Withings-SDK-iOS-DemoTests";
-			sourceTree = "<group>";
-		};
-		BF3AF0F91C6F74A200A75F52 /* Withings-SDK-iOS-DemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				BF3AF0FA1C6F74A200A75F52 /* Withings_SDK_iOS_DemoUITests.m */,
-				BF3AF0FC1C6F74A200A75F52 /* Info.plist */,
-			);
-			path = "Withings-SDK-iOS-DemoUITests";
 			sourceTree = "<group>";
 		};
 		BF6555B41C7CB23400D5FC9F /* Internal */ = {
@@ -473,42 +415,6 @@
 			productReference = BF3AF0D31C6F74A200A75F52 /* Withings-SDK-iOS-Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BF3AF0EA1C6F74A200A75F52 /* Withings-SDK-iOS-DemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF3AF1001C6F74A200A75F52 /* Build configuration list for PBXNativeTarget "Withings-SDK-iOS-DemoTests" */;
-			buildPhases = (
-				BF3AF0E71C6F74A200A75F52 /* Sources */,
-				BF3AF0E81C6F74A200A75F52 /* Frameworks */,
-				BF3AF0E91C6F74A200A75F52 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BF3AF0ED1C6F74A200A75F52 /* PBXTargetDependency */,
-			);
-			name = "Withings-SDK-iOS-DemoTests";
-			productName = "Withings-SDK-iOS-DemoTests";
-			productReference = BF3AF0EB1C6F74A200A75F52 /* Withings-SDK-iOS-DemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		BF3AF0F51C6F74A200A75F52 /* Withings-SDK-iOS-DemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF3AF1031C6F74A200A75F52 /* Build configuration list for PBXNativeTarget "Withings-SDK-iOS-DemoUITests" */;
-			buildPhases = (
-				BF3AF0F21C6F74A200A75F52 /* Sources */,
-				BF3AF0F31C6F74A200A75F52 /* Frameworks */,
-				BF3AF0F41C6F74A200A75F52 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BF3AF0F81C6F74A200A75F52 /* PBXTargetDependency */,
-			);
-			name = "Withings-SDK-iOS-DemoUITests";
-			productName = "Withings-SDK-iOS-DemoUITests";
-			productReference = BF3AF0F61C6F74A200A75F52 /* Withings-SDK-iOS-DemoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -526,14 +432,6 @@
 					};
 					BF3AF0D21C6F74A200A75F52 = {
 						CreatedOnToolsVersion = 7.2.1;
-					};
-					BF3AF0EA1C6F74A200A75F52 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = BF3AF0D21C6F74A200A75F52;
-					};
-					BF3AF0F51C6F74A200A75F52 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = BF3AF0D21C6F74A200A75F52;
 					};
 					BF6555CD1C7DB3F200D5FC9F = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -556,8 +454,6 @@
 				BF3AF0751C6F672100A75F52 /* Withings-SDK-iOS */,
 				BF3AF07F1C6F672100A75F52 /* Withings-SDK-iOSTests */,
 				BF3AF0D21C6F74A200A75F52 /* Withings-SDK-iOS-Demo */,
-				BF3AF0EA1C6F74A200A75F52 /* Withings-SDK-iOS-DemoTests */,
-				BF3AF0F51C6F74A200A75F52 /* Withings-SDK-iOS-DemoUITests */,
 				BF6555CD1C7DB3F200D5FC9F /* Documentation */,
 			);
 		};
@@ -585,20 +481,6 @@
 				BFD6AAE31CBA83C6004C1113 /* LaunchScreen.storyboard in Resources */,
 				BFD6AAE21CBA83C6004C1113 /* Assets.xcassets in Resources */,
 				BFD6AAE41CBA83C6004C1113 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF3AF0E91C6F74A200A75F52 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF3AF0F41C6F74A200A75F52 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,22 +617,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF3AF0E71C6F74A200A75F52 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF3AF0F01C6F74A200A75F52 /* Withings_SDK_iOS_DemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF3AF0F21C6F74A200A75F52 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF3AF0FB1C6F74A200A75F52 /* Withings_SDK_iOS_DemoUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -758,16 +624,6 @@
 			isa = PBXTargetDependency;
 			target = BF3AF0751C6F672100A75F52 /* Withings-SDK-iOS */;
 			targetProxy = BF3AF0821C6F672100A75F52 /* PBXContainerItemProxy */;
-		};
-		BF3AF0ED1C6F74A200A75F52 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF3AF0D21C6F74A200A75F52 /* Withings-SDK-iOS-Demo */;
-			targetProxy = BF3AF0EC1C6F74A200A75F52 /* PBXContainerItemProxy */;
-		};
-		BF3AF0F81C6F74A200A75F52 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF3AF0D21C6F74A200A75F52 /* Withings-SDK-iOS-Demo */;
-			targetProxy = BF3AF0F71C6F74A200A75F52 /* PBXContainerItemProxy */;
 		};
 		BF6555D31C7DB5A000D5FC9F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -954,7 +810,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Withings-SDK-iOS-Demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.Withings-SDK-iOS-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.jdrevet.Withings-SDK-iOS-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Withings-SDK-iOS-Demo/Withings-SDK-iOS-Demo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -971,58 +827,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Withings-SDK-iOS-Demo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.Withings-SDK-iOS-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.jdrevet.Withings-SDK-iOS-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Withings-SDK-iOS-Demo/Withings-SDK-iOS-Demo-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		BF3AF1011C6F74A200A75F52 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Withings-SDK-iOS-DemoTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.Withings-SDK-iOS-DemoTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Withings-SDK-iOS-Demo.app/Withings-SDK-iOS-Demo";
-			};
-			name = Debug;
-		};
-		BF3AF1021C6F74A200A75F52 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Withings-SDK-iOS-DemoTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.Withings-SDK-iOS-DemoTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Withings-SDK-iOS-Demo.app/Withings-SDK-iOS-Demo";
-			};
-			name = Release;
-		};
-		BF3AF1041C6F74A200A75F52 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Withings-SDK-iOS-DemoUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.Withings-SDK-iOS-DemoUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Withings-SDK-iOS-Demo";
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		BF3AF1051C6F74A200A75F52 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Withings-SDK-iOS-DemoUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.Withings-SDK-iOS-DemoUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Withings-SDK-iOS-Demo";
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -1075,24 +883,6 @@
 			buildConfigurations = (
 				BF3AF0FE1C6F74A200A75F52 /* Debug */,
 				BF3AF0FF1C6F74A200A75F52 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BF3AF1001C6F74A200A75F52 /* Build configuration list for PBXNativeTarget "Withings-SDK-iOS-DemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF3AF1011C6F74A200A75F52 /* Debug */,
-				BF3AF1021C6F74A200A75F52 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BF3AF1031C6F74A200A75F52 /* Build configuration list for PBXNativeTarget "Withings-SDK-iOS-DemoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF3AF1041C6F74A200A75F52 /* Debug */,
-				BF3AF1051C6F74A200A75F52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
