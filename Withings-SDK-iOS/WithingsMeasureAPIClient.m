@@ -10,10 +10,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -22,12 +22,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
+//
+// June 2016 addition of WithingsSleepMeasure sleep measures retrieval and mapping
+//
+// copyright (c) 2016 robertturrall
+//
+//
 
 #import "WithingsMeasureAPIClient.h"
 #import <OAuthSwift/OAuthSwift-Swift.h>
 #import <DCKeyValueObjectMapping/DCKeyValueObjectMapping.h>
 #import <SSKeychain/SSKeychain.h>
 #import "WithingsActivity+Mapping.h"
+#import "WithingsSleepMeasure+Mapping.h"
 #import "WithingsBodyMeasuresGroup+Mapping.h"
 #import "WithingsError.h"
 
@@ -90,6 +97,9 @@ static NSDateFormatter *ymdDateFormatter()
 {
     NSDictionary<NSString*,id> *parameters = dateRange ? [dateRange parametersWithYMDFormat] : [[[MeasuresDateRange alloc] init] parametersWithYMDFormat];
     [self sendRequestWithPath:@"v2/measure" action:@"getactivity" parameters:parameters user:userId success:^(NSDictionary *body){
+        
+        NSLog(@" -- response : %@", body);
+        
         NSArray *activitiesArrayJson = body[@"activities"];
         NSArray<WithingsActivity*> *activities = [WithingsActivity activitiesFromJson:activitiesArrayJson];
         success(activities);
@@ -98,6 +108,23 @@ static NSDateFormatter *ymdDateFormatter()
     }];
 }
 
+#pragma mark - Sleep measures 
+//TODO: retreive overall body node with "model" - requires creation of a top level WithingsSleepMeasuresGroup class or similar
+
+//https://wbsapi.withings.net/v2/sleep?action=get&userid=29&startdate=1387234800&enddate=1387258800
+
+- (void)getSleepMeasuresForUser:(NSString*)userId inDateRange:(MeasuresDateRange*)dateRange success:(void(^)(NSArray <WithingsSleepMeasure *> *sleepMeasures))success failure:(WithingsClientFailure)failure {
+    
+    NSDictionary<NSString*,id> *parameters = dateRange ? [dateRange parameters] : [[[MeasuresDateRange alloc] init] parameters];
+    [self sendRequestWithPath:@"v2/sleep" action:@"get" parameters:parameters user:userId success:^(NSDictionary *body) {
+        
+        NSArray *sleepArrayJson = body[@"series"];
+        NSArray<WithingsSleepMeasure*> *sleepArray = [WithingsSleepMeasure sleepMeasuresFromJson:sleepArrayJson];
+        success(sleepArray);
+    } failure:^(WithingsError *error) {
+        failure(error);
+    }];
+}
 
 #pragma mark - Body measures
 
@@ -234,8 +261,18 @@ static NSDateFormatter *ymdDateFormatter()
 {
     NSDate *startDate = _startDate ? _startDate : [NSDate dateWithTimeIntervalSince1970:0];
     NSDate *endDate = _endDate ? _endDate : [NSDate date];
-    return @{@"startdate" : @([startDate timeIntervalSince1970]),
-             @"enddate" : @([endDate timeIntervalSince1970])};
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDate *start12Noon = [calendar dateBySettingHour:12 minute:0 second:0 ofDate:startDate options:0];
+    NSDate *end12Noon = [calendar dateBySettingHour:12 minute:0 second:0 ofDate:endDate options:0];
+    
+    double difStart = [startDate timeIntervalSince1970] - [start12Noon timeIntervalSince1970];
+    double difEnd = [endDate timeIntervalSince1970] - [end12Noon timeIntervalSince1970];
+    double startTimeStampWithReference12Noon = [startDate timeIntervalSince1970] - difStart ;
+    double endTimeStampWithReference12Noon = [endDate timeIntervalSince1970] - difEnd ;
+    
+    return @{@"startdate" : @(startTimeStampWithReference12Noon),//@([startDate timeIntervalSince1970]),
+             @"enddate" : @(endTimeStampWithReference12Noon)};//[endDate timeIntervalSince1970])};
 }
 
 - (NSDictionary<NSString*, id>*)parametersWithYMDFormat

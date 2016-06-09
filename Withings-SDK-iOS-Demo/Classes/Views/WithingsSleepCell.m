@@ -1,8 +1,9 @@
 //
-// Withings_SDK_iOS.h
-// Withings-SDK-iOS
+//  WithingsSleepCell.m
+//  Withings-SDK-iOS
 //
-// Copyright (c) 2016 jdrevet
+//  Created by Robert Turrall on 08/06/16.
+//  Copyright © 2016 robertturrall. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,26 +23,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
-//
-// June 2016 addition of WithingsSleepMeasure sleep measures retrieval and mapping
-//
-// copyright (c) 2016 robertturrall
-//
-//
+
+#import "WithingsSleepCell.h"
+
+@implementation WithingsSleepCell
 
 
-#import <UIKit/UIKit.h>
-
-//! Project version number for Withings-SDK-iOS.
-FOUNDATION_EXPORT double Withings_SDK_iOSVersionNumber;
-
-//! Project version string for Withings-SDK-iOS.
-FOUNDATION_EXPORT const unsigned char Withings_SDK_iOSVersionString[];
-
-#import "WithingsAPI.h"
-#import "WithingsMeasureAPIClient.h"
-#import "WithingsError.h"
-#import "WithingsActivity.h"
-#import "WithingsSleepMeasure.h"
-#import "WithingsBodyMeasuresGroup.h"
-#import "WithingsBodyMeasure.h"
+@end

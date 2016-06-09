@@ -22,6 +22,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
+//
+// June 2016 addition of WithingsSleepMeasure sleep measures retrieval and mapping
+//
+// copyright (c) 2016 robertturrall
+//
+//
 
 #import "MainViewController.h"
 #import "WithingsAPI.h"
@@ -61,6 +67,7 @@
     
     //Configure the API menu
     _menuItems = @[[MenuItem menuItemWithTitle:@"Activity measures" segueId:@"ShowActivityMeasuresSegue"],
+                   [MenuItem menuItemWithTitle:@"Sleep measures" segueId:@"ShowSleepMeasuresSegue"],
                    [MenuItem menuItemWithTitle:@"Body measures" segueId:@"ShowBodyMeasuresSegue"]];
 }
 

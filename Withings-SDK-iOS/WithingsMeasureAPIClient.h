@@ -10,10 +10,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -22,12 +22,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
+//
+// June 2016 addition of WithingsSleepMeasure sleep measures retrieval and mapping
+//
+// copyright (c) 2016 robertturrall
+//
+//
 #import <Foundation/Foundation.h>
 
 #import "WithingsBodyMeasuresGroup.h"
 #import "WithingsBodyMeasure.h"
 
 @class WithingsActivity;
+@class WithingsSleepMeasure;
 @class MeasuresDateRange;
 @class WithingsError;
 
@@ -88,6 +95,16 @@ typedef void(^WithingsClientFailure)(WithingsError *error);
  */
 - (void)getActivitiesMeasuresForUser:(NSString*)userId success:(void(^)(NSArray<WithingsActivity*> *activitiesMeasures))success failure:(WithingsClientFailure)failure;
 
+#pragma mark - Sleep measures
+/**
+ * Gets the measures for the activities recorded in the given date range.
+ *
+ * @param userId The Withings user id returned during authorization process
+ * @param dateRange The date range in which the measures sould be returned
+ * @param success A block object to be executed when the activities measures in the range has been sucessfully fetched. If no activity has been found in this range, the block will give an empty array
+ * @param failure A block object to be executed when the request has failed
+ */
+- (void)getSleepMeasuresForUser:(NSString*)userId inDateRange:(MeasuresDateRange*)dateRange success:(void(^)(NSArray <WithingsSleepMeasure*> *sleepMeasures))success failure:(WithingsClientFailure)failure;
 
 #pragma mark - Body measures
 
