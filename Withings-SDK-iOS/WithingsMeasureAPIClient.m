@@ -98,7 +98,6 @@ static NSDateFormatter *ymdDateFormatter()
 {
     NSDictionary<NSString*,id> *parameters = dateRange ? [dateRange parametersWithYMDFormat] : [[[MeasuresDateRange alloc] init] parametersWithYMDFormat];
     [self sendRequestWithPath:@"v2/measure" action:@"getactivity" parameters:parameters user:userId success:^(NSDictionary *body){
-        NSLog(@" -- response : %@", body);
         NSArray *activitiesArrayJson = body[@"activities"];
         NSArray<WithingsActivity*> *activities = [WithingsActivity activitiesFromJson:activitiesArrayJson];
         success(activities);
@@ -108,9 +107,7 @@ static NSDateFormatter *ymdDateFormatter()
 }
 
 #pragma mark - Sleep measures 
-// NOTE from the API documentation: A single call can span up to 7 days maximum. To cover an wider time range, you'll need to perform mutliple calls. This is not catered for here.
-
-//TODO: retreive overall body node with "model" - requires creation of a top level WithingsSleepMeasuresGroup class or similar
+#warning TODO: retreive overall body node with "model" - requires creation of a top level WithingsSleepMeasuresGroup class or similar
 
 //https://wbsapi.withings.net/v2/sleep?action=get&userid=29&startdate=1387234800&enddate=1387258800
 
