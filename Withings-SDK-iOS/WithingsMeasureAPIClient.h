@@ -98,6 +98,7 @@ typedef void(^WithingsClientFailure)(WithingsError *error);
 #pragma mark - Sleep measures
 /**
  * Gets the measures for the activities recorded in the given date range.
+ * Note that only 7 days' worth of measures can be retrieved from the API at a time. To retrieve more, send further requests.
  *
  * @param userId The Withings user id returned during authorization process
  * @param dateRange The date range in which the measures sould be returned
