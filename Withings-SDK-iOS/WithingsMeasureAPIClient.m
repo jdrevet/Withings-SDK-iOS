@@ -53,6 +53,7 @@ static NSDateFormatter *ymdDateFormatter()
 
 @interface MeasuresDateRange ()
 - (NSDictionary<NSString*, id>*)parameters;
+- (NSDictionary<NSString*, id>*)parametersAt12Noon;
 - (NSDictionary<NSString*, id>*)parametersWithYMDFormat;
 @end
 
@@ -97,9 +98,7 @@ static NSDateFormatter *ymdDateFormatter()
 {
     NSDictionary<NSString*,id> *parameters = dateRange ? [dateRange parametersWithYMDFormat] : [[[MeasuresDateRange alloc] init] parametersWithYMDFormat];
     [self sendRequestWithPath:@"v2/measure" action:@"getactivity" parameters:parameters user:userId success:^(NSDictionary *body){
-        
         NSLog(@" -- response : %@", body);
-        
         NSArray *activitiesArrayJson = body[@"activities"];
         NSArray<WithingsActivity*> *activities = [WithingsActivity activitiesFromJson:activitiesArrayJson];
         success(activities);
@@ -109,13 +108,18 @@ static NSDateFormatter *ymdDateFormatter()
 }
 
 #pragma mark - Sleep measures 
+// NOTE from the API documentation: A single call can span up to 7 days maximum. To cover an wider time range, you'll need to perform mutliple calls. This is not catered for here.
+
 //TODO: retreive overall body node with "model" - requires creation of a top level WithingsSleepMeasuresGroup class or similar
 
 //https://wbsapi.withings.net/v2/sleep?action=get&userid=29&startdate=1387234800&enddate=1387258800
 
 - (void)getSleepMeasuresForUser:(NSString*)userId inDateRange:(MeasuresDateRange*)dateRange success:(void(^)(NSArray <WithingsSleepMeasure *> *sleepMeasures))success failure:(WithingsClientFailure)failure {
     
-    NSDictionary<NSString*,id> *parameters = dateRange ? [dateRange parameters] : [[[MeasuresDateRange alloc] init] parameters];
+    NSDictionary<NSString*,id> *parameters = dateRange ? [dateRange parametersAt12Noon] : [[[MeasuresDateRange alloc] init] parametersAt12Noon];
+    
+    NSLog(@" - %s - date range - %@", __PRETTY_FUNCTION__, parameters );
+    
     [self sendRequestWithPath:@"v2/sleep" action:@"get" parameters:parameters user:userId success:^(NSDictionary *body) {
         
         NSArray *sleepArrayJson = body[@"series"];
@@ -261,7 +265,15 @@ static NSDateFormatter *ymdDateFormatter()
 {
     NSDate *startDate = _startDate ? _startDate : [NSDate dateWithTimeIntervalSince1970:0];
     NSDate *endDate = _endDate ? _endDate : [NSDate date];
+    return @{@"startdate" : @([startDate timeIntervalSince1970]),
+                  @"enddate" : @([endDate timeIntervalSince1970])};
+}
+
+- (NSDictionary<NSString*, id>*)parametersAt12Noon {
     
+    NSDate *startDate = _startDate ? _startDate : [NSDate dateWithTimeIntervalSince1970:0];
+    NSDate *endDate = _endDate ? _endDate : [NSDate date];
+
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDate *start12Noon = [calendar dateBySettingHour:12 minute:0 second:0 ofDate:startDate options:0];
     NSDate *end12Noon = [calendar dateBySettingHour:12 minute:0 second:0 ofDate:endDate options:0];
