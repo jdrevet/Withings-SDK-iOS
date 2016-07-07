@@ -10,9 +10,9 @@ Withings-SDK-iOS provides an Objective-C interface for integrating iOS apps with
 For now, the SDK implements the following Withings API:
 - [Get Activity Measures](http://oauth.withings.com/api/doc#api-Measure-get_activity)
 - [Get Body Measures](http://oauth.withings.com/api/doc#api-Measure-get_measure)
+- [Get Sleep Measures](http://oauth.withings.com/api/doc#api-Measure-get_sleep)
 
 The following features will be added in the future:
-- [Get Sleep Measures](http://oauth.withings.com/api/doc#api-Measure-get_sleep)
 - [Get Sleep Summary](http://oauth.withings.com/api/doc#api-Measure-get_sleep_summary)
 - [Get Workouts](http://oauth.withings.com/api/doc#api-Measure-get_workouts)
 - [Get Intraday Activity](http://oauth.withings.com/api/doc#api-Measure-get_intraday_measure) (which need a special activation to access)

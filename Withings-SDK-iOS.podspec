@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Withings-SDK-iOS'
-  s.version = '0.1.0'
+  s.version = '0.2.0'
   s.license = 'MIT'
   s.summary = 'Provides an Objective-C interface for integrating iOS apps with the Withings API'
   s.homepage = 'https://github.com/jdrevet/Withings-SDK-iOS'
