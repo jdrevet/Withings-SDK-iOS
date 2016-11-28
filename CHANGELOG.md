@@ -1,8 +1,15 @@
-#Change Log
+# Change Log
+
 All notable changes to this project will be documented in this file.
 
 ---
-## [0.2.0](https://github.com/jdrevet/Withings-SDK-iOS/releases/tag/0.2.0) (07/07/2016)
+## [0.2.1](https://github.com/jdrevet/Withings-SDK-iOS/releases/tag/0.2.1) (2016-11-28)
+Released on Monday, November 28, 2016.
+
+Fix [#10](https://github.com/jdrevet/Withings-SDK-iOS/issues/10)
+
+---
+## [0.2.0](https://github.com/jdrevet/Withings-SDK-iOS/releases/tag/0.2.0) (2016-07-07)
 Released on Thursday, July 07, 2016.
 
 New API implemented:
@@ -11,7 +18,7 @@ New API implemented:
 
 ---
 
-## [0.1.0](https://github.com/jdrevet/Withings-SDK-iOS/releases/tag/0.1.0) (04/14/2016)
+## [0.1.0](https://github.com/jdrevet/Withings-SDK-iOS/releases/tag/0.1.0) (2016-04-14)
 Released on Thursday, April 14, 2016.
 
 Initial release of the SDK. It gives access to the following Withings API:

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Withings-SDK-iOS'
-  s.version = '0.2.0'
+  s.version = '0.2.1'
   s.license = 'MIT'
   s.summary = 'Provides an Objective-C interface for integrating iOS apps with the Withings API'
   s.homepage = 'https://github.com/jdrevet/Withings-SDK-iOS'
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.requires_arc = true
 
-  s.dependency 'OAuthSwift', '~> 0.5.2'
+  s.dependency 'OAuthSwift', '~> 1.1.0'
   s.dependency 'DCKeyValueObjectMapping', '~> 1.5'
   s.dependency 'SSKeychain', '~> 1.3'
 
