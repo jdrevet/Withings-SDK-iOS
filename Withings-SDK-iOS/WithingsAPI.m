@@ -79,7 +79,7 @@ static NSString * const KEY_CHAIN_SERVICE_ID = @"withings.keychain.users";
 - (void)handleOpenURL:(NSURL*)url
 {
     if ([url.host isEqualToString:OAUTH_CALLBACK_PATH]) {
-        [OAuthSwift handleOpenURL:url];
+        [OAuthSwift handleWithUrl:url];
         [_withingsWebViewController dismissViewControllerAnimated:YES completion:nil];
     }
 }
@@ -95,14 +95,14 @@ static NSString * const KEY_CHAIN_SERVICE_ID = @"withings.keychain.users";
     //Set the authorize url handler
     if ([[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:(NSOperatingSystemVersion){9, 0, 0}]) {
         //Since iOS 9, we can use the SFSafariViewController
-        SafariURLHandler *safariURLHandler = [[SafariURLHandler alloc] initWithViewController:presenterViewController];
+        SafariURLHandler *safariURLHandler = [[SafariURLHandler alloc] initWithViewController:presenterViewController oauthSwift:oauth];
         safariURLHandler.delegate = self;
         self.failureBlock = failure;
-        oauth.authorize_url_handler = safariURLHandler;
+        oauth.authorizeURLHandler = safariURLHandler;
     }
     else {
         _withingsWebViewController = [[WithingsWebViewController alloc] initWithPresenterViewController:presenterViewController];
-        oauth.authorize_url_handler = _withingsWebViewController;
+        oauth.authorizeURLHandler = _withingsWebViewController;
     }
     
     //Construct the callback url
@@ -111,17 +111,17 @@ static NSString * const KEY_CHAIN_SERVICE_ID = @"withings.keychain.users";
     callbackUrlComponents.host = OAUTH_CALLBACK_PATH;
     
     //Launch the OAuth authorization process
-    [oauth authorizeWithCallbackURL:callbackUrlComponents.URL success:^(OAuthSwiftCredential *credential, NSURLResponse *response, NSDictionary<NSString *,NSString *> *parameters) {
-        //Retrieve the user id
-        NSString *userId = parameters[@"userid"];
-        if(userId) {
-            //Store the credentials in the keychain
-            [SSKeychain setPasswordData:[NSKeyedArchiver archivedDataWithRootObject:credential] forService:KEY_CHAIN_SERVICE_ID account:userId];
-            success(userId);
-        }
-        else {
-            failure([WithingsError errorWithCode:WithingsErrorOAuth message:@"User id not returned by the server"]);
-        }
+    [oauth objc_authorizeWithCallbackURL:callbackUrlComponents.URL.absoluteString success:^(OAuthSwiftCredential *credential, OAuthSwiftResponse *response, NSDictionary<NSString *,id> *parameters) {
+            //Retrieve the user id
+            NSString *userId = parameters[@"userid"];
+            if(userId) {
+                //Store the credentials in the keychain
+                [SSKeychain setPasswordData:[NSKeyedArchiver archivedDataWithRootObject:credential] forService:KEY_CHAIN_SERVICE_ID account:userId];
+                success(userId);
+            }
+            else {
+                failure([WithingsError errorWithCode:WithingsErrorOAuth message:@"User id not returned by the server"]);
+            }
     } failure:^(NSError *error) {
         failure([WithingsError errorWithCode:WithingsErrorOAuth userInfo:error.userInfo]);
     }];

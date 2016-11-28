@@ -65,7 +65,8 @@ static NSDateFormatter *ymdDateFormatter()
     NSAssert(consumerKey && consumerSecret, @"Consumer key and consumer secret cannot be null");
     self = [super init];
     if (self) {
-        _oauthClient = [[OAuthSwiftClient alloc] initWithConsumerKey:consumerKey consumerSecret:consumerSecret];
+        OAuthSwiftCredential *credential = [[OAuthSwiftCredential alloc] initWithConsumerKey:consumerKey consumerSecret:consumerSecret];
+        _oauthClient = [[OAuthSwiftClient alloc] initWithCredential:credential];
         _oauthClient.paramsLocation = ParamsLocationRequestURIQuery;
     }
     return self;
@@ -194,14 +195,14 @@ static NSDateFormatter *ymdDateFormatter()
     //Retrieve the user's credentials
     NSData *credentialData = [SSKeychain passwordDataForService:KEY_CHAIN_SERVICE_ID account:userId];
     OAuthSwiftCredential *credential = (OAuthSwiftCredential*)[NSKeyedUnarchiver unarchiveObjectWithData:credentialData];
-    if(!credential || !credential.oauth_token || ! credential.oauth_token_secret) {
+    if(!credential || !credential.oauthToken || ! credential.oauthTokenSecret) {
         failure([WithingsError errorWithCode:WithingsErrorNoUserAuthorization message:[NSString stringWithFormat:@"Authorization cannot be found for user %@", userId]]);
         return;
     }
     
     //Update the client credentials with the user's credentials
-    _oauthClient.credential.oauth_token = credential.oauth_token;
-    _oauthClient.credential.oauth_token_secret = credential.oauth_token_secret;
+    _oauthClient.credential.oauthToken = credential.oauthToken;
+    _oauthClient.credential.oauthTokenSecret = credential.oauthTokenSecret;
     
     //Add action and userid parameters to the request parameters
     NSMutableDictionary<NSString*, id> *requestParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
@@ -210,19 +211,29 @@ static NSDateFormatter *ymdDateFormatter()
     
     //Send the request
     NSURL *url = [[NSURL URLWithString:WITHINGS_API_BASE_URL] URLByAppendingPathComponent:path];
-    [_oauthClient get:url.absoluteString parameters:requestParameters headers:nil success:^(NSData *data, NSHTTPURLResponse *response) {
+    [_oauthClient get:url.absoluteString parameters:requestParameters headers:nil success:^(OAuthSwiftResponse * response) {
+        //Check HTTP status code
+        if(response.response.statusCode != 200) {
+            failure([WithingsError errorWithCode:WithingsErrorResponseParsing message:[NSString stringWithFormat:@"HTTP error received from the server: %li", response.response.statusCode]]);
+            return;
+        }
+        
+        //Try to parse the response body
         NSError *error = nil;
-        NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:response.data options:kNilOptions error:&error];
         if(!error && jsonResponse) {
             NSInteger status = [jsonResponse[@"status"] integerValue];
             if(status == 0) {
+                //Success
                 success(jsonResponse[@"body"]);
             }
             else {
+                //Error message from server
                 failure([WithingsError serverErrorWithCode:(WithingsServerErrorCode)status message:jsonResponse[@"error"]]);
             }
         }
         else {
+            //Error while parsing the response body
             failure([WithingsError errorWithCode:WithingsErrorResponseParsing message:@"The response received from the server is not a valid JSON"]);
         }
     } failure:^(NSError *error) {
