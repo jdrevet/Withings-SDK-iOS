@@ -32,7 +32,7 @@
 #import "WithingsMeasureAPIClient.h"
 #import <OAuthSwift/OAuthSwift-Swift.h>
 #import <DCKeyValueObjectMapping/DCKeyValueObjectMapping.h>
-#import <SSKeychain/SSKeychain.h>
+#import <SAMKeychain/SAMKeychain.h>
 #import "WithingsActivity+Mapping.h"
 #import "WithingsSleepMeasure+Mapping.h"
 #import "WithingsBodyMeasuresGroup+Mapping.h"
@@ -193,7 +193,7 @@ static NSDateFormatter *ymdDateFormatter()
 - (void)sendRequestWithPath:(NSString*)path action:(NSString *)action parameters:(NSDictionary<NSString*,id>*)parameters user:(NSString*)userId success:(void(^)(NSDictionary *body))success failure:(WithingsClientFailure)failure
 {
     //Retrieve the user's credentials
-    NSData *credentialData = [SSKeychain passwordDataForService:KEY_CHAIN_SERVICE_ID account:userId];
+    NSData *credentialData = [SAMKeychain passwordDataForService:KEY_CHAIN_SERVICE_ID account:userId];
     OAuthSwiftCredential *credential = (OAuthSwiftCredential*)[NSKeyedUnarchiver unarchiveObjectWithData:credentialData];
     if(!credential || !credential.oauthToken || ! credential.oauthTokenSecret) {
         failure([WithingsError errorWithCode:WithingsErrorNoUserAuthorization message:[NSString stringWithFormat:@"Authorization cannot be found for user %@", userId]]);
@@ -214,7 +214,7 @@ static NSDateFormatter *ymdDateFormatter()
     [_oauthClient get:url.absoluteString parameters:requestParameters headers:nil success:^(OAuthSwiftResponse * response) {
         //Check HTTP status code
         if(response.response.statusCode != 200) {
-            failure([WithingsError errorWithCode:WithingsErrorResponseParsing message:[NSString stringWithFormat:@"HTTP error received from the server: %li", response.response.statusCode]]);
+            failure([WithingsError errorWithCode:WithingsErrorResponseParsing message:[NSString stringWithFormat:@"HTTP error received from the server: %li", (long)response.response.statusCode]]);
             return;
         }
         

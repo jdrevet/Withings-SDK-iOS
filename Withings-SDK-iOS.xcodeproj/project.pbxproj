@@ -22,6 +22,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		24AA1EE2C5F8457569DB052F /* Pods_Withings_SDK_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18753988CE4F7414B31B3B75 /* Pods_Withings_SDK_iOSTests.framework */; };
 		3E64277ED36AECA033BE4E2A /* Pods_Withings_SDK_iOS_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F2E07268734C7F9B62F510 /* Pods_Withings_SDK_iOS_Demo.framework */; };
 		BF0B04D61C836CD200C82AD9 /* WithingsWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0B04D41C836CD200C82AD9 /* WithingsWebViewController.h */; };
 		BF0B04D71C836CD200C82AD9 /* WithingsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0B04D51C836CD200C82AD9 /* WithingsWebViewController.m */; };
@@ -106,10 +107,13 @@
 
 /* Begin PBXFileReference section */
 		0D377E13BF01C1C0CC30A234 /* Pods_Withings_SDK_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Withings_SDK_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DE10B7D86A2DB9D11776EEE /* Pods-Withings-SDK-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Withings-SDK-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Withings-SDK-iOSTests/Pods-Withings-SDK-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		0E0FA20AECA4998C434D7EB8 /* Pods-Withings-SDK-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Withings-SDK-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Withings-SDK-iOS/Pods-Withings-SDK-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		12F2E07268734C7F9B62F510 /* Pods_Withings_SDK_iOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Withings_SDK_iOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18753988CE4F7414B31B3B75 /* Pods_Withings_SDK_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Withings_SDK_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3B5210F42D0F2A4064CA85 /* Pods-Withings-SDK-iOS-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Withings-SDK-iOS-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Withings-SDK-iOS-Demo/Pods-Withings-SDK-iOS-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		7385E1CFB5B477ECC859CFE9 /* Pods-Withings-SDK-iOS-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Withings-SDK-iOS-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Withings-SDK-iOS-Demo/Pods-Withings-SDK-iOS-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		8A0F29DAE7E7593301B0E573 /* Pods-Withings-SDK-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Withings-SDK-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Withings-SDK-iOSTests/Pods-Withings-SDK-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BDDA7622D63168DC206ABB12 /* Pods-Withings-SDK-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Withings-SDK-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Withings-SDK-iOS/Pods-Withings-SDK-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		BF0B04D41C836CD200C82AD9 /* WithingsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithingsWebViewController.h; sourceTree = "<group>"; };
 		BF0B04D51C836CD200C82AD9 /* WithingsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithingsWebViewController.m; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF3AF0811C6F672100A75F52 /* Withings_SDK_iOS.framework in Frameworks */,
+				24AA1EE2C5F8457569DB052F /* Pods_Withings_SDK_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +204,7 @@
 			children = (
 				0D377E13BF01C1C0CC30A234 /* Pods_Withings_SDK_iOS.framework */,
 				12F2E07268734C7F9B62F510 /* Pods_Withings_SDK_iOS_Demo.framework */,
+				18753988CE4F7414B31B3B75 /* Pods_Withings_SDK_iOSTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -350,6 +356,8 @@
 				BDDA7622D63168DC206ABB12 /* Pods-Withings-SDK-iOS.release.xcconfig */,
 				2F3B5210F42D0F2A4064CA85 /* Pods-Withings-SDK-iOS-Demo.debug.xcconfig */,
 				7385E1CFB5B477ECC859CFE9 /* Pods-Withings-SDK-iOS-Demo.release.xcconfig */,
+				8A0F29DAE7E7593301B0E573 /* Pods-Withings-SDK-iOSTests.debug.xcconfig */,
+				0DE10B7D86A2DB9D11776EEE /* Pods-Withings-SDK-iOSTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -383,12 +391,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF3AF08A1C6F672100A75F52 /* Build configuration list for PBXNativeTarget "Withings-SDK-iOS" */;
 			buildPhases = (
-				2C15C8F24074883FEC0FFD65 /* Check Pods Manifest.lock */,
+				2C15C8F24074883FEC0FFD65 /* [CP] Check Pods Manifest.lock */,
 				BF3AF0711C6F672100A75F52 /* Sources */,
 				BF3AF0721C6F672100A75F52 /* Frameworks */,
 				BF3AF0731C6F672100A75F52 /* Headers */,
 				BF3AF0741C6F672100A75F52 /* Resources */,
-				3BDE0EC1E151F5A987AA79B1 /* Copy Pods Resources */,
+				3BDE0EC1E151F5A987AA79B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -403,9 +411,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF3AF08D1C6F672100A75F52 /* Build configuration list for PBXNativeTarget "Withings-SDK-iOSTests" */;
 			buildPhases = (
+				ECE9FF63C38470579016B2D1 /* [CP] Check Pods Manifest.lock */,
 				BF3AF07C1C6F672100A75F52 /* Sources */,
 				BF3AF07D1C6F672100A75F52 /* Frameworks */,
 				BF3AF07E1C6F672100A75F52 /* Resources */,
+				A130A93C3BEA387F57DDCB1A /* [CP] Embed Pods Frameworks */,
+				2D54C327440AB897DBBB076C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -421,12 +432,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF3AF0FD1C6F74A200A75F52 /* Build configuration list for PBXNativeTarget "Withings-SDK-iOS-Demo" */;
 			buildPhases = (
-				1FBC268AD604C653B94EA414 /* Check Pods Manifest.lock */,
+				1FBC268AD604C653B94EA414 /* [CP] Check Pods Manifest.lock */,
 				BF3AF0CF1C6F74A200A75F52 /* Sources */,
 				BF3AF0D01C6F74A200A75F52 /* Frameworks */,
 				BF3AF0D11C6F74A200A75F52 /* Resources */,
-				EF4715A405403974E00B5E3E /* Embed Pods Frameworks */,
-				66D76CF1C47FD47FB7D836F8 /* Copy Pods Resources */,
+				EF4715A405403974E00B5E3E /* [CP] Embed Pods Frameworks */,
+				66D76CF1C47FD47FB7D836F8 /* [CP] Copy Pods Resources */,
 				BFE202D91CBABF7600CCEB9F /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -445,7 +456,7 @@
 		BF3AF06D1C6F672100A75F52 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = jdrevet;
 				TargetAttributes = {
 					BF3AF0751C6F672100A75F52 = {
@@ -511,44 +522,59 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1FBC268AD604C653B94EA414 /* Check Pods Manifest.lock */ = {
+		1FBC268AD604C653B94EA414 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		2C15C8F24074883FEC0FFD65 /* Check Pods Manifest.lock */ = {
+		2C15C8F24074883FEC0FFD65 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		3BDE0EC1E151F5A987AA79B1 /* Copy Pods Resources */ = {
+		2D54C327440AB897DBBB076C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Withings-SDK-iOSTests/Pods-Withings-SDK-iOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BDE0EC1E151F5A987AA79B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,19 +582,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Withings-SDK-iOS/Pods-Withings-SDK-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		66D76CF1C47FD47FB7D836F8 /* Copy Pods Resources */ = {
+		66D76CF1C47FD47FB7D836F8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Withings-SDK-iOS-Demo/Pods-Withings-SDK-iOS-Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A130A93C3BEA387F57DDCB1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Withings-SDK-iOSTests/Pods-Withings-SDK-iOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF6555D11C7DB3FD00D5FC9F /* ShellScript */ = {
@@ -584,14 +625,29 @@
 			shellPath = /bin/sh;
 			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"jdrevet\";\ncompanyID=\"com.jdrevet\";\ncompanyURL=\"\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"~/help\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--ignore \"Pods\" \\\n--explicit-crossref \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"\n";
 		};
-		EF4715A405403974E00B5E3E /* Embed Pods Frameworks */ = {
+		ECE9FF63C38470579016B2D1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EF4715A405403974E00B5E3E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,6 +744,7 @@
 		BF3AF0881C6F672100A75F52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -737,6 +794,7 @@
 		BF3AF0891C6F672100A75F52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -781,7 +839,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E0FA20AECA4998C434D7EB8 /* Pods-Withings-SDK-iOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
@@ -801,7 +858,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDDA7622D63168DC206ABB12 /* Pods-Withings-SDK-iOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
@@ -819,6 +875,7 @@
 		};
 		BF3AF08E1C6F672100A75F52 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A0F29DAE7E7593301B0E573 /* Pods-Withings-SDK-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Withings-SDK-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -829,6 +886,7 @@
 		};
 		BF3AF08F1C6F672100A75F52 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DE10B7D86A2DB9D11776EEE /* Pods-Withings-SDK-iOSTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Withings-SDK-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -841,7 +899,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2F3B5210F42D0F2A4064CA85 /* Pods-Withings-SDK-iOS-Demo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -859,7 +916,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7385E1CFB5B477ECC859CFE9 /* Pods-Withings-SDK-iOS-Demo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;

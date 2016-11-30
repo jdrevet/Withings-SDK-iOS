@@ -3,7 +3,7 @@ use_frameworks!
 def shared_pods
   pod 'OAuthSwift', '~> 1.1.0'
   pod 'DCKeyValueObjectMapping', '~> 1.5'
-  pod 'SSKeychain', '~> 1.3'
+  pod 'SAMKeychain', '~> 1.5.2'
 end
 
 target 'Withings-SDK-iOS' do

@@ -26,7 +26,7 @@
 #import "WithingsAPI.h"
 #import <OAuthSwift/OAuthSwift-Swift.h>
 #import <SafariServices/SafariServices.h>
-#import <SSKeychain/SSKeychain.h>
+#import <SAMKeychain/SAMKeychain.h>
 #import "WithingsMeasureAPIClient.h"
 #import "WithingsError.h"
 #import "WithingsWebViewController.h"
@@ -116,7 +116,7 @@ static NSString * const KEY_CHAIN_SERVICE_ID = @"withings.keychain.users";
             NSString *userId = parameters[@"userid"];
             if(userId) {
                 //Store the credentials in the keychain
-                [SSKeychain setPasswordData:[NSKeyedArchiver archivedDataWithRootObject:credential] forService:KEY_CHAIN_SERVICE_ID account:userId];
+                [SAMKeychain setPasswordData:[NSKeyedArchiver archivedDataWithRootObject:credential] forService:KEY_CHAIN_SERVICE_ID account:userId];
                 success(userId);
             }
             else {
@@ -129,7 +129,7 @@ static NSString * const KEY_CHAIN_SERVICE_ID = @"withings.keychain.users";
 
 - (BOOL)hasAccessAuthorizationForUser:(NSString*)userId
 {
-    return ([SSKeychain passwordDataForService:KEY_CHAIN_SERVICE_ID account:userId] != nil);
+    return ([SAMKeychain passwordDataForService:KEY_CHAIN_SERVICE_ID account:userId] != nil);
 }
 
 - (WithingsMeasureAPIClient*)measureAPIClient
