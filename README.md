@@ -30,7 +30,7 @@ Several third-party open source libraries are used within Withings-SDK-iOS:
 
 1. [OAuthSwift](https://github.com/OAuthSwift/OAuthSwift) - OAuth support
 2. [DCKeyValueObjectMapping](https://github.com/dchohfi/KeyValueObjectMapping) - JSON mapping
-3. [SSKeychain](https://github.com/soffes/SSKeychain) - Keychain wrapper
+3. [SAMKeyChain](https://github.com/soffes/SAMKeychain) - Keychain wrapper
 
 
 ## Installation

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 
 ---
+## [0.2.2](https://github.com/jdrevet/Withings-SDK-iOS/releases/tag/0.2.2) (2016-12-07)
+Released on Wednesday, December 07, 2016.
+
+Migrate to [SAMKeyChain](https://github.com/soffes/SAMKeychain) for keychain wrapping in replacement of the deprecated [SSKeyChain](https://github.com/soffes/SSKeychain)
+
+---
 ## [0.2.1](https://github.com/jdrevet/Withings-SDK-iOS/releases/tag/0.2.1) (2016-11-28)
 Released on Monday, November 28, 2016.
 
