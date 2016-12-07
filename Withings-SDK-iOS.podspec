@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
 
   s.dependency 'OAuthSwift', '~> 1.1.0'
   s.dependency 'DCKeyValueObjectMapping', '~> 1.5'
-  s.dependency 'SSKeychain', '~> 1.5.2'
+  s.dependency 'SAMKeychain', '~> 1.5.2'
 
 end
