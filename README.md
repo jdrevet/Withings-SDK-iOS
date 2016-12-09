@@ -1,4 +1,9 @@
 # Withings-SDK-iOS
+[![GitHub release](https://img.shields.io/github/release/jdrevet/Withings-SDK-iOS.svg)](https://github.com/jdrevet/Withings-SDK-iOS/releases/latest)
+[![CocoaPods version](https://img.shields.io/cocoapods/v/Withings-SDK-iOS.svg)](https://cocoapods.org/pods/Withings-SDK-iOS)
+[![CocoaPods plateform](https://img.shields.io/cocoapods/p/Withings-SDK-iOS.svg)](https://cocoapods.org/pods/Withings-SDK-iOS)
+[![GitHub license](https://img.shields.io/github/license/jdrevet/Withings-SDK-iOS.svg)](https://raw.githubusercontent.com/jdrevet/Withings-SDK-iOS/master/LICENSE)
+
 
 ## Overview
 
