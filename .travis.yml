@@ -2,7 +2,7 @@ language: objective-c
 osx_image: xcode8.2
 env:
   global:
-  - SDK=iphonesimulator10.0
+  - SDK=iphonesimulator10.2
   - WORKSPACE=Withings-SDK-iOS.xcworkspace
   - FRAMEWORK_SCHEME=Withings-SDK-iOS
   - EXAMPLE_SCHEME=Withings-SDK-iOS-Demo
