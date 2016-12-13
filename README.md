@@ -1,4 +1,6 @@
 # Withings-SDK-iOS
+
+[![Travis CI build status](https://img.shields.io/travis/jdrevet/Withings-SDK-iOS.svg)](https://travis-ci.org/jdrevet/Withings-SDK-iOS)
 [![GitHub release](https://img.shields.io/github/release/jdrevet/Withings-SDK-iOS.svg)](https://github.com/jdrevet/Withings-SDK-iOS/releases/latest)
 [![CocoaPods version](https://img.shields.io/cocoapods/v/Withings-SDK-iOS.svg)](https://cocoapods.org/pods/Withings-SDK-iOS)
 [![CocoaPods plateform](https://img.shields.io/cocoapods/p/Withings-SDK-iOS.svg)](https://cocoapods.org/pods/Withings-SDK-iOS)
