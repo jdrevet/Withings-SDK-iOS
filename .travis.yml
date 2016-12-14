@@ -23,3 +23,6 @@ script:
 
   # Build Example in Debug
   - xcodebuild -workspace "$WORKSPACE" -scheme "$EXAMPLE_SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
+
+  # Validate the pod
+  - pod lib lint --allow-warnings
