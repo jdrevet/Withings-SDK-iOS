@@ -30,10 +30,10 @@ The following features will be added in the future:
 Withings-SDK-iOS requires iOS 8.0 and above.
 
 
-In order to use the API, you will need to register as a developer [here](https://oauth.withings.com/partner/add) to get a consumer key and secret. Note that you will also need to have an end-user Withings account to fetch data from.
+In order to use the API, you will need to register as a developer [here](https://oauth.withings.com/partner/add) to get a consumer key and secret. Note that you will also need to have an end-user Withings account to test data fetching.
 
 
-Several third-party open source libraries are used within Withings-SDK-iOS:
+Several third-party open source libraries, all under MIT license, are used within Withings-SDK-iOS:
 
 1. [OAuthSwift](https://github.com/OAuthSwift/OAuthSwift) - OAuth support
 2. [DCKeyValueObjectMapping](https://github.com/dchohfi/KeyValueObjectMapping) - JSON mapping
@@ -58,10 +58,6 @@ Then, run the following command:
 ```bash
 $ pod install
 ```
-
-### Installation with Carthage
-
-TODO
 
 
 ## Usage
