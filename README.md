@@ -133,6 +133,11 @@ For example, to get all the activities measures for an user, call:
 }
 ```
 
+### API Documentation
+
+The complete API documentation is available on [CocoaDocs](http://cocoadocs.org/docsets/Withings-SDK-iOS).
+
+
 ## Author
 
 Johan Drevet
