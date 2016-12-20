@@ -9,6 +9,9 @@
 #import <XCTest/XCTest.h>
 #import "WithingsAPI.h"
 
+#define MACRO_NAME(f) #f
+#define MACRO_VALUE(f)  MACRO_NAME(f)
+
 @interface Withings_SDK_iOSTests : XCTestCase
 
 @end
@@ -25,10 +28,10 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    NSString *envVar = [[NSProcessInfo processInfo] environment][@"TEST"];
-    XCTAssert(envVar != nil);
-    XCTAssert([envVar isEqualToString:@"TEST_TEST"], @"%@", [[NSProcessInfo processInfo] environment]);
+- (void)testGetEnvVar {
+    NSString *testEnvVar = [NSString stringWithCString:MACRO_VALUE(TEST) encoding:NSUTF8StringEncoding];
+    XCTAssertNotNil(testEnvVar);
+    XCTAssert([testEnvVar isEqualToString:@"TEST_TEST"], @"%@", testEnvVar);
     //[[WithingsAPI sharedInstance] setUpWithConsumerKey:CONSUMER_KEY consumerSecret:CONSUMER_SECRET];
 }
 
